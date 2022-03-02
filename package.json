@@ -1,0 +1,14 @@
+{
+  "name": "LightHouse",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "mobile": "lhci collect --url http://localhost:9090/ -n 10 && yarn upload",
+    "upload": "sh -c 'mkdir ${0} && lhci upload --target filesystem --outputDir ${0}'",
+    "aggregate": "node aggregate.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@lhci/cli": "^0.9.0"
+  }
+}

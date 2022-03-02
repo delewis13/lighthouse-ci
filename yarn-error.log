@@ -1,0 +1,43 @@
+Arguments: 
+  /Users/daniellewis/.nvm/versions/node/v15.14.0/bin/node /usr/local/Cellar/yarn/1.22.10/libexec/bin/yarn.js mobile feb-14_2
+
+PATH: 
+  /Users/daniellewis/.nvm/versions/node/v15.14.0/bin:/Users/daniellewis/.nix-profile/bin:/Users/daniellewis/.pyenv/shims:/Users/daniellewis/.pyenv/bin:/usr/local/opt/node@12/bin:/usr/local/bin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/daniellewis/.nvm/versions/node/v15.14.0/bin:/Users/daniellewis/.nix-profile/bin:/Users/daniellewis/.pyenv/shims:/Users/daniellewis/.pyenv/bin:/usr/local/opt/node@12/bin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:/Users/daniellewis/.cargo/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.14.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/daniellewis/Documents/Canva/Performance/LightHouse/package.json: Unexpected token / in JSON at position 89
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:310:30)
+      at /usr/local/Cellar/yarn/1.22.10/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "LightHouse",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      // "mobile": "lhci collect --settings.configPath=./mobile.js --url http://localhost:9090/ -n 10",
+      // "desktop": "lhci collect --settings.configPath=./desktop.js --url http://localhost:9090/ -n 10",
+      "mobile": "lhci collect --psiStrategy mobile --url http://localhost:9090/ -n 10 && yarn upload",
+      "desktop": "lhci collect --psiStrategy desktop --url http://localhost:9090/ -n 10 && yarn upload ${0}",
+      "upload": "mkdir ${0} && lhci upload --target filesystem --outputDir ${0}"
+    },
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
